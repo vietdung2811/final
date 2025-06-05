@@ -5,12 +5,13 @@ const dbConnect = require("./db/dbConnect");
 const UserRouter = require("./routes/UserRouter");
 const PhotoRouter = require("./routes/PhotoRouter");
 const CommentRouter = require("./routes/CommentRouter");
-
+const path = require("path");
 
 dbConnect();
 
 app.use(cors());
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "public", "images")));
 app.use("/api/user", UserRouter);
 app.use("/api/photo", PhotoRouter);
 

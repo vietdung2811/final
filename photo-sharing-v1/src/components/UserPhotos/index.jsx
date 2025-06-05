@@ -43,7 +43,7 @@ function UserPhotos() {
           <Card key={photo._id} sx={{ mb: 4, borderRadius: 2 }}>
             <CardMedia
               component="img"
-              image={`/api/photo/images/${photo.file_name}`} // Đường dẫn lấy ảnh theo backend bạn đang dùng
+              image={`http://localhost:8081/images/${photo.file_name}`}
               alt="User photo"
               sx={{
                 maxHeight: 500,
